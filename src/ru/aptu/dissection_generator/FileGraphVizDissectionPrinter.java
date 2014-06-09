@@ -50,7 +50,7 @@ public class FileGraphVizDissectionPrinter implements AutoCloseable {
         int size = dissection.getOrder();
         while (counts.size() <= size) counts.add(0);
         counts.set(size, counts.get(size) + 1);
-        for (Dissection child : dissection.getChilden()) {
+        for (Dissection child : dissection.getChildren()) {
             fillByDist(child, counts);
         }
     }
@@ -66,7 +66,7 @@ public class FileGraphVizDissectionPrinter implements AutoCloseable {
 
         printForSingleDissection(root, rootX, rootY);
 
-        for (Dissection child : root.getChilden()) {
+        for (Dissection child : root.getChildren()) {
             size = child.getOrder();
 
             double childX = radii.get(size) * Math.sin(2 * Math.PI * remaining.get(size) / counts.get(size)) + globalX;

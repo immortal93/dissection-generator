@@ -45,7 +45,7 @@ public class Dissection {
         incidence[before][ptrs[before]++] = after;
     }
 
-    public List<Dissection> getChilden() {
+    public List<Dissection> getChildren() {
         return children;
     }
 
